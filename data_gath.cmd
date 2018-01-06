@@ -58,65 +58,65 @@ if exist %letter%:\REPORTES\%user%\ (
 ::
 ::
 :: BASE DE DATOS
-
 ::
 ::
 :: Crea el folder de equipo si no existe
-if exist %letter%:\REPORTES\%user%\%userd%\ (
+if exist "%letter%:\REPORTES\%user%\%userd%\" (
 	echo.
 	echo. 
 	echo ---------------------------------------------
 	echo ya existe el folder %userd%, proseguiremos...
 	echo ---------------------------------------------
-	) else (md %letter%:\REPORTES\%user%\%userd%\ & echo listo!)
+	) else (md "%letter%:\REPORTES\%user%\%userd%\" & echo listo!)
 ::
 ::
 :: Crea carpeta sysinfo si no existe
-if exist %letter%:\REPORTES\%user%\%userd%\SYSINFO\ (
+if exist "%letter%:\REPORTES\%user%\%userd%\SYSINFO\" (
 	echo.
 	echo. 
 	echo ---------------------------------------------
 	echo ya existe el folder SYSINFO, proseguiremos...
 	echo ---------------------------------------------
-	) else (md %letter%:\REPORTES\%user%\%userd%\SYSINFO\ & echo Listo!)
+	) else (md "%letter%:\REPORTES\%user%\%userd%\SYSINFO\" & echo Listo!)
 ::
 ::
 :: Crea carpeta de netinfo si no existe
-if exist %letter%:\REPORTES\%user%\%userd%\NETINFO\ (
+if exist "%letter%:\REPORTES\%user%\%userd%\NETINFO\" (
 	echo.
 	echo. 
 	echo ---------------------------------------------
 	echo ya existe el folder NETINFO, proseguiremos...
 	echo ---------------------------------------------
-	) else (md %letter%:\REPORTES\%user%\%userd%\NETINFO\ & echo listo!)
+	) else (md "%letter%:\REPORTES\%user%\%userd%\NETINFO\" & echo listo!)
 ::
 ::
 :: Crea carpeta de wifidata si no existe
-if exist %letter%:\REPORTES\%user%\%userd%\NETINFO\WiFiData\ (
+if exist "%letter%:\REPORTES\%user%\%userd%\NETINFO\WiFiData\" (
 	echo.
 	echo.
 	echo ----------------------------------------------
 	echo Ya existe el folder WiFiData, proseguiremos...
 	echo ----------------------------------------------
 	echo.
-	) else (md %letter%:\REPORTES\%user%\%userd%\NETINFO\WiFiData\ & echo listo!) 
+	) else (md "%letter%:\REPORTES\%user%\%userd%\NETINFO\WiFiData\" & echo listo!) 
 ::
 ::
 :: Crea carpeta de export si no existe
-if exist %letter%:\REPORTES\%user%\%userd%\NETINFO\WiFiData\export\ (
+if exist "%letter%:\REPORTES\%user%\%userd%\NETINFO\WiFiData\export\" (
 	echo.
 	echo.
 	echo --------------------------------------------
 	echo Ya existe el folder export, proseguiremos...
 	echo --------------------------------------------
 	echo.
-	) else (md %letter%:\REPORTES\%user%\%userd%\NETINFO\WiFiData\export\ & echo listo!) 
+	) else (md "%letter%:\REPORTES\%user%\%userd%\NETINFO\WiFiData\export\" & echo listo!) 
 ::
 ::
 :: IPCONFIG
-ipconfig > %letter%:\REPORTES\%user%\%userd%\NETINFO\ipconfig.txt
+ipconfig > "%letter%:\REPORTES\%user%\%userd%\NETINFO\ipconfig.txt"
 :: Configuracion del archivo del perfil de red
-set wififile=%letter%:\REPORTES\%user%\%userd%\NETINFO\WiFiData\WFCon_%date:~-4,4%%date:~-7,2%%date:~-10,2%_%time:~0,2%%time:~3,2%%time:~6,2%.txt
+set wififile="%letter%:\REPORTES\%user%\%userd%\NETINFO\WiFiData\WFCon_%date:~-4,4%%date:~-7,2%%date:~-10,2%"
+::_%time:~0,2%%time:~3,2%%time:~6,2%.txt
 echo.
 echo.
 echo -------------------------------------
@@ -159,8 +159,8 @@ echo.
 echo ----------------------------------
 echo Decodificando el DMI del equipo...
 echo ----------------------------------
-%letter%:\Programas\SOPORTE_TECNICO\dmidecode.exe > %letter%:\REPORTES\%user%\%userd%\SYSINFO\dmidecode.txt
-systeminfo > %letter%:\REPORTES\%user%\%userd%\SYSINFO\sysinfo.txt
+%letter%:\Programas\SOPORTE_TECNICO\dmidecode.exe > "%letter%:\REPORTES\%user%\%userd%\SYSINFO\dmidecode.txt"
+systeminfo > "%letter%:\REPORTES\%user%\%userd%\SYSINFO\sysinfo.txt"
 cls
 echo. 
 echo.
