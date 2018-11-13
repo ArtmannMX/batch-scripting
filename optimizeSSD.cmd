@@ -16,7 +16,7 @@ goto :inicio
 cls
 echo --------------------------------------------------------------------
 echo  Script de Optimizacion de discos de estado solido (ssd) en windows
-echo                   PCS Tecno Servicio El refugio Cd. Fdz.
+echo               artmx smk&fly zona media del san luis
 echo --------------------------------------------------------------------
 echo.
 echo.
