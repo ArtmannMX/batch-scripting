@@ -13,6 +13,7 @@ goto :inicio
 ::
 :: INICIO
 :inicio
+@echo off
 cls
 echo --------------------------------------------------------------------
 echo  Script de Optimizacion de discos de estado solido (ssd) en windows
