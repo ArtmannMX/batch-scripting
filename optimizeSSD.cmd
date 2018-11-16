@@ -28,7 +28,8 @@ echo 2 - Habilitacion de TRIM
 echo 3 - Deshabilitacion de prefetch y superfetch
 echo 4 - Deshabilitacion de hibernacion del equipo
 echo 5 - Evitar apagar el disco  por inactividad
-ECHO 6 - Deshabilitar cache de escritura en SSD
+echo 6 - Deshabilitar cache de escritura en SSD
+echo 7 - Deshabilitar Paginacion de sistema (Memoria Virtual)
 echo 0 - Salir
 echo.
 set/p opcion= opcion =
@@ -38,6 +39,7 @@ if %opcion% == 3 goto :3
 if %opcion% == 4 goto :4
 if %opcion% == 5 goto :5
 if %opcion% == 6 goto :6
+if %opcion% == 7 goto :7
 if %opcion% == 0 goto :EOF
 ::
 ::
@@ -249,4 +251,9 @@ echo -------------------------------------------
 echo  Deshabilitar paginacion (Memoria Virtual)
 echo -------------------------------------------
 echo.
+echo Quieres abrir las opciones avanzadas del sistema para ajustar este parametro?
+set/p r13= [s]i [n]o ?  =   
+if %r13% == s (
+		systempropertiesadvanced
+	) else goto :inicio
 :EOF
